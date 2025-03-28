@@ -54,7 +54,7 @@ pipeline {
         // }
         stage('deploy') {
             when {
-                expression { env.GIT_BRANCH == '*/master' }
+                expression { env.GIT_BRANCH == 'origin/master' }
             }
             steps {
                 sh 'echo This is deploy.'
