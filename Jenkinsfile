@@ -53,6 +53,9 @@ pipeline {
         //     }
         // }
         stage('deploy') {
+            when {
+                experssion { env.GIT_BRANCH == '*/master' }
+            }
             steps {
                 sh 'echo This is deploy.'
             // error 'SOME ERROR'
