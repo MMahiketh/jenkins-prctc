@@ -5,7 +5,7 @@ pipeline {
     options {
         timeout(time: 10, unit: 'MINUTES')
         disableConcurrentBuilds()
-        //retry(3)
+    //retry(3)
     }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr.Jenkins', description: 'How should I say hello to?')
@@ -32,26 +32,26 @@ pipeline {
         stage('test') {
             steps {
                 sh 'echo This is test.'
-                //sh 'sleep 20'
+            //sh 'sleep 20'
             }
         }
         stage('Approval') {
             input {
-                message "Should we continue?"
-                ok "Yes, we should"
-                submitter "alice,bob"
+                message 'Should we continue?'
+                ok 'Yes, we should'
+                submitter 'alice,bob'
                 parameters {
-                    string(name: 'PERSON', defaultValue: 'Mahi', description: 'Who should I say hello to?')
+                    string(name: 'MAN', defaultValue: 'Mahi', description: 'Who should I say hello to?')
                 }
             }
             steps {
-                echo "Hello, ${PERSON}, nice to meet you."
+                echo "Hello, ${MAN}, nice to meet you."
             }
         }
         stage('deploy') {
             steps {
                 sh 'echo This is deploy.'
-                //error 'SOME ERROR'
+            //error 'SOME ERROR'
             }
         }
     }
