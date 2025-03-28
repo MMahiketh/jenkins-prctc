@@ -38,11 +38,11 @@ pipeline {
         stage('Approval') {
             input {
                 message 'Should we continue?'
-                ok 'Yes, we should'
+                ok 'Yes, proceed'
                 // submitter 'alice,bob'
-                parameters {
-                    string(name: 'MAN', defaultValue: 'Mahi', description: 'Who should I say hello to?')
-                }
+                // parameters {
+                //     string(name: 'MAN', defaultValue: 'Mahi', description: 'Who should I say hello to?')
+                // }
             }
             steps {
                 echo "Hello, ${MAN}, nice to meet you."
@@ -51,7 +51,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'echo This is deploy.'
-            //error 'SOME ERROR'
+            // error 'SOME ERROR'
             }
         }
     }
