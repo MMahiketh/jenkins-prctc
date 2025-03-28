@@ -35,19 +35,19 @@ pipeline {
             //sh 'sleep 20'
             }
         }
-        stage('Approval') {
-            input {
-                message 'Should we continue?'
-                ok 'Yes, proceed'
-                // submitter 'alice,bob'
-                // parameters {
-                //     string(name: 'MAN', defaultValue: 'Mahi', description: 'Who should I say hello to?')
-                // }
-            }
-            steps {
-                echo "Hello, ${MAN}, nice to meet you."
-            }
-        }
+        // stage('Approval') {
+        //     input {
+        //         message 'Should we continue?'
+        //         ok 'Yes, proceed'
+        //         // submitter 'alice,bob'
+        //         // parameters {
+        //         //     string(name: 'MAN', defaultValue: 'Mahi', description: 'Who should I say hello to?')
+        //         // }
+        //     }
+        //     steps {
+        //         echo "Hello, ${MAN}, nice to meet you."
+        //     }
+        // }
         stage('deploy') {
             steps {
                 sh 'echo This is deploy.'
