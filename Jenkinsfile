@@ -7,9 +7,9 @@ pipeline {
         disableConcurrentBuilds()
     //retry(3)
     }
-    environment {
-        DEBUG = 'true'
-    }
+    // environment {
+    //     DEBUG = 'true'
+    // }
     // parameters {
     //     string(name: 'PERSON', defaultValue: 'Mr.Jenkins', description: 'How should I say hello to?')
     //     text(name:'BIOGRAPHY', defaultValue: '', description: 'Print some info about the person')
@@ -30,6 +30,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo This is build.'
+                sh 'env'
             }
         }
         stage('test') {
